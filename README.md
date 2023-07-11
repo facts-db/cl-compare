@@ -4,6 +4,7 @@ cl-compare
 Compare anything
 ----------------
 
+```common-lisp
 (compare 'a 'b)
 => -1
 
@@ -12,10 +13,14 @@ Compare anything
 
 (compare '(a b 1) '(a b 2))
 => -1
+```
+
+---
 
 Your own order
 --------------
 
+```common-lisp
 (defstruct fruit weight price)
 
 (defmethod compare ((a fruit) (b fruit))
@@ -27,6 +32,9 @@ Your own order
   (compare apple orange))
 
 => -1
+```
+
+---
 
 Contribute
 ----------
@@ -39,20 +47,3 @@ correctness.
 
 To submit contributions, just fork the project and submit a pull
 request.
-
-Licence
--------
-
-cl-compare - generic comparison functions
-
-Copyright 2022 Thomas de Grivel <thodg@kmx.io>
-
-Permission is hereby granted to use this software granted
-the above copyright notice and this permission paragraph
-are included in all copies and substantial portions of this
-software.
-
-THIS SOFTWARE IS PROVIDED "AS-IS" WITHOUT ANY GUARANTEE OF
-PURPOSE AND PERFORMANCE. IN NO EVENT WHATSOEVER SHALL THE
-AUTHOR BE CONSIDERED LIABLE FOR THE USE AND PERFORMANCE OF
-THIS SOFTWARE.
