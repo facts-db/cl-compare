@@ -21,7 +21,7 @@ Your own order
 --------------
 
 ```common-lisp
-(defstruct fruit weight price)
+(defstruct fruit price weight)
 
 (defmethod compare ((a fruit) (b fruit))
   (compare (* (fruit-price a) (fruit-weight a))
