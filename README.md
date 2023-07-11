@@ -24,8 +24,8 @@ Your own order
 (defstruct fruit weight price)
 
 (defmethod compare ((a fruit) (b fruit))
-  (compare (/ (fruit-price a) (fruit-weight a))
-  	       (/ (fruit-price b) (fruit-weight b))))
+  (compare (* (fruit-price a) (fruit-weight a))
+           (* (fruit-price b) (fruit-weight b))))
 
 (let ((apple (make-fruit :price 0.3 :weight 100))
       (orange (make-fruit :price 4.5 :weight 1000)))
