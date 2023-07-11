@@ -1,5 +1,5 @@
 ;; cl-compare - generic comparison functions
-;; Copyright 2022 Thomas de Grivel <thodg@kmx.io>
+;; Copyright 2022,2023 Thomas de Grivel <thodg@kmx.io>
 ;;
 ;; Permission is hereby granted to use this software granted
 ;; the above copyright notice and this permission paragraph
@@ -52,7 +52,7 @@
            (package-name b)))
 
 (defmethod compare ((a symbol) (b symbol))
-  (case (compare (symbol-package a) (symbol-package b))
+  (ecase (compare (symbol-package a) (symbol-package b))
     (-1 -1)
     (1 1)
     (0 (compare (symbol-name a) (symbol-name b)))))
